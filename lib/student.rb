@@ -76,7 +76,7 @@ class Student
     WHERE grade = 10
     ORDER BY id LIMIT 1
     SQL
-    DB[:conn].execute(sql).collect do |student|
+    DB[:conn].execute(sql).first do |student|
       Student.new_from_db(student)
     end
   end
