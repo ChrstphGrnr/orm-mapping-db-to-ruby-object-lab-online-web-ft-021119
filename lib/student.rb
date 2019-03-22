@@ -73,8 +73,7 @@ class Student
     sql = <<-SQL
     SELECT *
     FROM students
-    WHERE grade = 10
-    ORDER BY name LIMIT 1
+    GROUP BY grade LIMIT 1
     SQL
     DB[:conn].execute(sql).collect do |student|
       Student.new_from_db(student)
