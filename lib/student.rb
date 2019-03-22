@@ -52,7 +52,10 @@ class Student
     FROM students
     WHERE grade <= 11
     SQL
-    DB[:conn].execute(sql).collect |student|
+    DB[:conn].execute(sql).collect do |student|
+      Student.new_from_db(student)
+    end
+  end
 
   def save
     sql = <<-SQL
