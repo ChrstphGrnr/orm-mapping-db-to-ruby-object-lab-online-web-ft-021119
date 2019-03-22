@@ -73,6 +73,7 @@ class Student
     sql = <<-SQL
     SELECT *
     FROM students
+    ORDER BY id
     GROUP BY grade LIMIT 1
     SQL
     DB[:conn].execute(sql).collect do |student|
