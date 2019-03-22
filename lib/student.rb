@@ -85,7 +85,7 @@ class Student
     FROM students
     WHERE grade = ?
     SQL
-    DB[:conn].execute(sql, x).collect {|students| Student.new_from_db(student)}
+    DB[:conn].execute(sql, x).collect {|students| Student.new_from_db(students)}
   end
 
 
