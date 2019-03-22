@@ -77,7 +77,6 @@ class Student
     ORDER BY id LIMIT 1
     SQL
     DB[:conn].execute(sql).collect {|student|Student.new_from_db(student)}[0]
-    end
   end
 
   def save
